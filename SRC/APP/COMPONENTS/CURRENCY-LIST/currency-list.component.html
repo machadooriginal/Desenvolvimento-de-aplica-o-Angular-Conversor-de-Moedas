@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<app-nav-bar></app-nav-bar>
+<div class="content">
+  <div *ngIf="isLoading" class="loading">Carregando...</div>
+  <div *ngIf="!isLoading && currencies.length > 0" class="card">
+    <h2>Lista de Moedas:</h2>
+    <input pInputText type="text" (input)="filterGlobal($event)" placeholder="Buscar...">
+    <p-table #dt [value]="currencies" [paginator]="true" [rows]="rows" [totalRecords]="totalRecords" [rowsPerPageOptions]="[5,10,20,30,40,50]" [globalFilterFields]="['code', 'rate']">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="code">Código <p-sortIcon field="code"></p-sortIcon></th>
+          <th pSortableColumn="rate">Taxa <p-sortIcon field="rate"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-currency>
+        <tr>
+          <td>{{ currency.code }}</td>
+          <td>{{ currency.rate }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <div *ngIf="!isLoading && currencies.length === 0" class="empty">
+    Nenhuma moeda encontrada.
+  </div>
+</div>
+
+
+

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+.content {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  margin-top: 1297px; /* Ajuste conforme necessário para garantir que fique abaixo do navbar */
+  height: calc(100vh - -1870px); /* Ajuste a altura conforme necessário */
+  display: flex;
+  flex-direction: column;
+
+ .card{
+  display: block;
+  flex: 1;
+  overflow-y: auto;
+  
+
+  h2{
+    color: white;
+    font-size: 27px;
+  }
+ }
+}
+.loading {
+  text-align: center;
+  margin: 20px;
+
+}
+
+.empty {
+  text-align: center;
+  margin: 20px;
+}
+
+p-table { width: 100%; }
+
+input[pInputText] { margin-bottom: 10px; }
+
+@media (max-width: 768px) {
+   p-table { 
+    font-size: 0.9rem;
+  } 
+ .content {
+   padding: 10px; 
+  }
+}
+
+@media (max-width: 480px) { 
+  p-table { 
+    font-size: 0.8rem; 
+  } 
+  .content {
+    padding: 5px;
+  } 
+ .card h2 {
+   font-size: 1.2rem; 
+  }
+}
